@@ -37,7 +37,7 @@ class Race_Progress_model extends CI_Model {
         $progressTime = PROGRESS_TIME_PER_CLICK;
 
         //Calculate time to reach it endurance limit for which horse can run by maximum speed
-        $enduranceLimit = $horseData[CN_ENDURANCE] * 100;
+        $enduranceLimit = $horseData[CN_ENDURANCE] * ENDURANCE_MULTIPLIER;
         $distanceWithMaxSpeed = $horseData[CN_DISTANCE_COVERED] + $horseData[CN_SPEED]*$progressTime;
         if($distanceWithMaxSpeed <= $enduranceLimit){
             $horseData[CN_DISTANCE_COVERED] = $distanceWithMaxSpeed;
@@ -55,7 +55,7 @@ class Race_Progress_model extends CI_Model {
             }
 
             //If endurance limit reached then calculate the speed reduction due to endurance effect
-            $enduranceEffect = ($horseData[CN_STRENGTH]*STRENGTH_FACTOR)/100;
+            $enduranceEffect = ($horseData[CN_STRENGTH]*STRENGTH_FACTOR)/STRENGTH_PERCENTAGE_FACTOR;
             $enduranceEffect = SPEED_REDUCTION_AFTER_ENDURANCE_REACHED - $enduranceEffect;
             $progressDistanceCalculated = $horseData[CN_SPEED] - $enduranceEffect;
 
