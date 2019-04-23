@@ -72,6 +72,9 @@ composer install
 -        |-- models
 
 
+## Configuration Note
+- If you changed the directory name of this application then you have to update "$config['base_url']" in "application/config/config.php" file
+
 ## Code Abbreviation
 - CN_ = Column Name
 - TBL_ = Table Name
@@ -81,6 +84,8 @@ composer install
 
 Create your own feature branch, commit open PR. Better to add tests related to your code.
 '''
-#For running tests (if phphunit is alreaddy setup on system), just run following command in root directory.
+#For running tests (if phpunit is already setup on system), just run following command in root directory.
 phpunit
 '''
+
+

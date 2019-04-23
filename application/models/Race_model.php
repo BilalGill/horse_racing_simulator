@@ -39,6 +39,8 @@ class Race_model extends CI_Model {
         $query = $this->db->get();
         $result = $query->result_array();
         $race_result = array();
+
+        //Creating Dictionary with respect to Race
         if(!empty($result)){
             foreach($result as $row_item){
                 $raceID = $row_item[CN_RACE_ID];
@@ -60,6 +62,8 @@ class Race_model extends CI_Model {
         $query = $this->db->get();
         $result = $query->result_array();
         $race_result = array();
+
+        //Creating Dictionary with respect to Race
         if(!empty($result)){
             foreach($result as $row_item){
                 $raceID = $row_item[CN_RACE_ID];
